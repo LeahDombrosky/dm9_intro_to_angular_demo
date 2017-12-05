@@ -25,7 +25,7 @@
   <div ng-controller="ctrl">
     {{ test }}
     <input type="" placeholder="My Name" ng-model="input" name="" value="" /> {{ input }}
-    <select ng-model="select" ng-options="item for item in cars">
+    <select ng-change="selectedItemChanged(select)" ng-model="select" ng-options="item for item in cars">
       {{ item }}
     </select>
     <hr>

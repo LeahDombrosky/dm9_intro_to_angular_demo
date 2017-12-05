@@ -12,5 +12,5 @@ angular.module("app").controller("ctrl", function($scope) {
     age: 34,
     location: "NRH, Tx"
   };
-  $scope.logger = car => console.log($scope.select);
+  $scope.selectedItemChanged = car => console.log(car);
 });
