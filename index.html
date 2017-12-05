@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title></title>
+</head>
+
+<body>
+  <style>
+    .getSwoll {
+      background-color: red;
+      height: 200px;
+    }
+
+    .getShrunk {
+      height: 75px;
+      background-color: white;
+    }
+  </style>
+
+
+  <div ng-controller="ctrl">
+    {{ test }}
+    <input type="" placeholder="My Name" ng-model="input" name="" value="" /> {{ input }}
+    <select ng-model="select" ng-options="item for item in cars">
+      {{ item }}
+    </select>
+    <hr>
+    <div class="getShrunk" ng-class="{ getSwoll: hover, getShrunk: notHover }" ng-mouseover="hover  = true; notHover = false "
+      ng-mouseleave="hover = false; notHover= true" ng-repeat="car in cars | orderBy: car | filter: input">
+      {{ car }}
+      <hr>
+    </div>
+
+    <hr>
+    <div ng-repeat="(prop, val) in me">
+      {{ prop | uppercase}}: {{ val }}
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+  <script src="app.js"></script>
+  <script src="ctrl.js"></script>
+</body>
+
+</html>
